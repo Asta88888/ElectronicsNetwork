@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "electronicsnetwork"
+version = "0.1.0"
+description = ""
+authors = ["Anastasiya Soloviova <mafanya.as@mail.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.13"
+django = "^5.2.7"
+djangorestframework = "^3.16.1"
+django-filter = "^25.2"
+psycopg2-binary = "^2.9.11"
+python-dotenv = "^1.2.1"
+drf-yasg = "^1.21.11"
+coverage = "^7.11.0"
+
+
+[tool.poetry.group.lint.dependencies]
+flake8 = "^7.3.0"
+black = "^25.9.0"
+isort = "^7.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
