@@ -1,5 +1,5 @@
 from rest_framework.exceptions import ValidationError
-from validators import validate_supplier_chain
+from network.validators import validate_supplier_chain
 
 
 def calculate_level(instance):

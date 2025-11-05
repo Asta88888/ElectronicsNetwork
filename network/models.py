@@ -52,7 +52,7 @@ class NetworkNode(models.Model):
         related_name="clients",
         verbose_name="Поставщик",
     )
-    debt = models.DecimalField(max_length=12, decimal_places=2, default=0, verbose_name="Задолженность")
+    debt = models.DecimalField(max_digits=12, decimal_places=2, default=0, verbose_name="Задолженность")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
     level = models.PositiveIntegerField(default=0, choices=LEVEL_CHOICES, editable=False, verbose_name="Уровень иерархии")
 
