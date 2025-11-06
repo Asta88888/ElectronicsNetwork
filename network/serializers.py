@@ -18,7 +18,11 @@ class NetworkNodeSerializer(serializers.ModelSerializer):
     Поле "Задолженности"("debt") доступно только для чтения через API.
     Включает связанные продукты
     """
-    products = ProductSerializer(many=True, read_only=True)
+    products = serializers.PrimaryKeyRelatedField(
+        many=True,
+        queryset=Product.objects.all(),
+        required=False
+    )
     supplier_name = serializers.CharField(source="supplier.name", read_only=True)
 
     class Meta:
