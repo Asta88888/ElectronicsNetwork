@@ -14,6 +14,7 @@ psycopg2-binary = "^2.9.11"
 python-dotenv = "^1.2.1"
 drf-yasg = "^1.21.11"
 coverage = "^7.11.0"
+djangorestframework-simplejwt = "^5.5.1"
 
 
 [tool.poetry.group.lint.dependencies]
@@ -24,3 +25,18 @@ isort = "^7.0.0"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 119
+exclude = ''' ( /( \.eggs
+    | \.git
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | dist )/
+    | foo.py
+      ) '''
+
+[tool.isort]
+line_length = 119
