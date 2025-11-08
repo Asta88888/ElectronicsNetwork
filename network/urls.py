@@ -1,7 +1,8 @@
-from django.urls import path, include
+from django.urls import include, path
 from rest_framework.routers import SimpleRouter
-from network.views import NetworkNodeViewSet, ProductViewSet
+
 from network.apps import NetworkConfig
+from network.views import NetworkNodeViewSet, ProductViewSet
 
 app_name = NetworkConfig.name
 

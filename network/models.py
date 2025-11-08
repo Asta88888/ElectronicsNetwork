@@ -1,6 +1,7 @@
 from django.db import models
-from network.validators import validate_supplier_chain
+
 from network.services import calculate_level
+from network.validators import validate_supplier_chain
 
 
 class Product(models.Model):
@@ -54,7 +55,11 @@ class NetworkNode(models.Model):
     )
     debt = models.DecimalField(max_digits=12, decimal_places=2, default=0, verbose_name="Задолженность")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
-    level = models.PositiveIntegerField(default=0, choices=LEVEL_CHOICES, editable=False, verbose_name="Уровень иерархии")
+    level = models.PositiveIntegerField(
+        default=0,
+        choices=LEVEL_CHOICES,
+        editable=False,
+        verbose_name="Уровень иерархии")
 
     class Meta:
         verbose_name = "Звено сети"

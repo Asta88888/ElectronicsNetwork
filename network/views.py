@@ -1,9 +1,10 @@
-from rest_framework.viewsets import ModelViewSet
-from network.models import Product, NetworkNode
-from network.serializers import ProductSerializer, NetworkNodeSerializer
-from rest_framework import filters
-from network.permissions import IsActiveUser
 from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import filters
+from rest_framework.viewsets import ModelViewSet
+
+from network.models import NetworkNode, Product
+from network.permissions import IsActiveUser
+from network.serializers import NetworkNodeSerializer, ProductSerializer
 
 
 class ProductViewSet(ModelViewSet):

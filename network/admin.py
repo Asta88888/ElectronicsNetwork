@@ -1,6 +1,7 @@
 from django.contrib import admin
-from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth import get_user_model
+from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
+
 from network.models import NetworkNode, Product
 
 User = get_user_model()
@@ -28,6 +29,7 @@ if not admin.site.is_registered(User):
             }),
         )
 
+
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     """
@@ -36,6 +38,7 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = ("name", "model", "release_date")
     search_fields = ("name", "model")
     ordering = ("release_date",)
+
 
 @admin.register(NetworkNode)
 class NetworkNodeAdmin(admin.ModelAdmin):
